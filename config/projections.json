@@ -1,0 +1,12 @@
+
+{
+  "src/foodform/view/*.hiccup.clj": {
+    "command": "view",
+  },
+  "src/foodform/controller/*_controller.clj": {
+    "command": "controller",
+  },
+  "spec/foodform/*_spec.clj": {
+    "command": "spec"
+  }
+}
