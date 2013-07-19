@@ -1,15 +1,15 @@
-(ns sample_app.controller.post-controller-spec
+(ns foodform.controller.order-controller-spec
   (:require [speclj.core :refer [describe around it should= run-specs]]
             [joodo.spec-helpers.controller :refer [do-get rendered-template rendered-context
                                                    with-mock-rendering with-routes]]
-            [sample_app.controller.post-controller :refer [post-controller]]))
+            [foodform.controller.order-controller :refer [order-controller]]))
 
-(describe "post-controller"
+(describe "order-controller"
   (with-mock-rendering)
-  (with-routes post-controller)
+  (with-routes order-controller)
 
-  (it "directs to the not_found page if the blog post isn't specified"
-    (let [result (do-get "/post")]
+  (it "directs to the not_found page if the blog order isn't specified"
+    (let [result (do-get "/order")]
       (should= 404 (:status result))
       (should= "not_found" @rendered-template)
-      (should= "You must specify a blog post." (:error @rendered-context)))))
+      (should= "You must specify a blog order." (:error @rendered-context)))))
